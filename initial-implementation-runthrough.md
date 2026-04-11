@@ -14,4 +14,3 @@ Start-to-finish path for building the starter from zero.
 8. DX baseline
 9. production hardening
 10. reuse readiness
-

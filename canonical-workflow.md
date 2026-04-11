@@ -14,4 +14,3 @@ Single source of truth for day-to-day development, git flow, quality gates, CI, 
 8. run pre-push checks
 9. push
 10. let CI repeat the checks
-

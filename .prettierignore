@@ -1,9 +1,5 @@
 node_modules
 .next
-.DS_Store
 dist
 coverage
 .turbo
-.env
-.env.local
-.env.*.local

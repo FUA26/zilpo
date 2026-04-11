@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 export default function RoutesLayout({ children }: { children: ReactNode }) {
   return (
@@ -11,8 +12,8 @@ export default function RoutesLayout({ children }: { children: ReactNode }) {
       >
         <strong>Pisky</strong>
         <nav style={{ marginTop: 8, display: "flex", gap: 16 }}>
-          <a href="/">Home</a>
-          <a href="/dashboard">Dashboard</a>
+          <Link href="/">Home</Link>
+          <Link href="/dashboard">Dashboard</Link>
         </nav>
       </header>
       <main style={{ padding: 24 }}>{children}</main>

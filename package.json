@@ -2,6 +2,7 @@
   "name": "pisky",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.29.2",
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "pnpm -r build",
@@ -10,5 +11,13 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "check": "pnpm format:check && pnpm lint && pnpm typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.2",
+    "typescript": "^6.0.2"
   }
 }

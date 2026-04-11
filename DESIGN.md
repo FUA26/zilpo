@@ -22,4 +22,3 @@ Visual source of truth for the starter.
 - keep visual intent separate from implementation details
 - let theme presets change the feel without rewriting components
 - keep the default palette mostly monochrome with a restrained accent
-

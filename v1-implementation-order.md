@@ -14,4 +14,3 @@ Recommended order for the first production-ready version.
 - Phase 8: DX baseline
 - Phase 9: production hardening
 - Phase 10: reuse readiness
-
