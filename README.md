@@ -17,6 +17,7 @@ Opinionated Next.js SaaS starter.
 - `theme-system.md`
 - `canonical-workflow.md`
 - `initial-implementation-runthrough.md`
+- `feature-boundaries.md`
 
 ## Status
 

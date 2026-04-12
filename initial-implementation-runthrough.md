@@ -10,7 +10,7 @@ Start-to-finish path for building the starter from zero.
 4. shared UI
 5. core app foundation (`config`, `db`, `auth`, health routes)
 6. `apps/admin`
-7. feature boundaries
+7. feature boundaries and route-to-feature composition
 8. DX baseline
 9. production hardening
 10. reuse readiness
