@@ -1,0 +1,9 @@
+pre-commit:
+  commands:
+    quality:
+      run: bash tooling/lefthook/pre-commit.sh
+
+pre-push:
+  commands:
+    tests:
+      run: bash tooling/lefthook/pre-push.sh

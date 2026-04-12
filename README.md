@@ -18,6 +18,7 @@ Opinionated Next.js SaaS starter.
 - `canonical-workflow.md`
 - `initial-implementation-runthrough.md`
 - `feature-boundaries.md`
+- `dx-baseline.md`
 
 ## Status
 
