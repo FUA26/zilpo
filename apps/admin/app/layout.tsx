@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getBrandProfile } from "@pisky/config/brand";
-import { calNeutralTheme, themeToStyle } from "@pisky/ui/theme";
+import { getThemePreset, themeToStyle } from "@pisky/ui/theme";
 import "./globals.css";
 
 const brand = getBrandProfile();
+const theme = getThemePreset(process.env.NEXT_PUBLIC_THEME_PRESET);
 
 export const metadata: Metadata = {
   title: {
@@ -19,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const themeStyle = themeToStyle(calNeutralTheme);
+  const themeStyle = themeToStyle(theme);
 
   return (
     <html lang="en" style={themeStyle}>

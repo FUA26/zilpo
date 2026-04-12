@@ -78,3 +78,18 @@ export const calInkTheme: ThemePreset = {
   radius: calNeutralTheme.radius,
   typography: calNeutralTheme.typography,
 };
+
+export const themePresets = {
+  "cal-neutral": calNeutralTheme,
+  "cal-ink": calInkTheme,
+} as const;
+
+export type ThemePresetName = keyof typeof themePresets;
+
+export function getThemePreset(name: string | undefined): ThemePreset {
+  if (!name) {
+    return calNeutralTheme;
+  }
+
+  return themePresets[name as ThemePresetName] ?? calNeutralTheme;
+}

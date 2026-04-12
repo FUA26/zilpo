@@ -11,6 +11,7 @@ import {
   CardTitle,
   Separator,
 } from "@pisky/ui";
+import { getThemePreset } from "@pisky/ui/theme";
 
 type NavItem = {
   href: string;
@@ -19,6 +20,7 @@ type NavItem = {
 };
 
 const brand = getBrandProfile();
+const theme = getThemePreset(process.env.NEXT_PUBLIC_THEME_PRESET);
 
 const navItems: NavItem[] = [
   {
@@ -141,8 +143,8 @@ export function ProductShell({ children }: { children: ReactNode }) {
             <Card>
               <CardHeader>
                 <Badge variant="secondary">Theme</Badge>
-                <CardTitle>cal-neutral</CardTitle>
-                <CardDescription>Default preset</CardDescription>
+                <CardTitle>{theme.name}</CardTitle>
+                <CardDescription>{theme.description}</CardDescription>
               </CardHeader>
             </Card>
             <Card>
