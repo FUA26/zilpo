@@ -1,5 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Separator,
+} from "@pisky/ui";
 
 type NavItem = {
   href: string;
@@ -45,39 +55,6 @@ function ShellNavLink({ item }: { item: NavItem }) {
   );
 }
 
-function ShellCard({
-  title,
-  value,
-  detail,
-}: {
-  title: string;
-  value: string;
-  detail: string;
-}) {
-  return (
-    <article
-      style={{
-        border: "1px solid var(--border)",
-        borderRadius: "var(--radius-lg)",
-        background: "var(--card)",
-        padding: 16,
-        display: "grid",
-        gap: 8,
-      }}
-    >
-      <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-        {title}
-      </span>
-      <strong style={{ fontSize: 24, letterSpacing: "-0.03em" }}>
-        {value}
-      </strong>
-      <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-        {detail}
-      </span>
-    </article>
-  );
-}
-
 export function ProductShell({ children }: { children: ReactNode }) {
   return (
     <div
@@ -118,27 +95,21 @@ export function ProductShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
 
-        <div
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 16,
-            display: "grid",
-            gap: 12,
-          }}
-        >
-          <div style={{ display: "grid", gap: 4 }}>
-            <span style={{ color: "var(--muted-foreground)", fontSize: 12 }}>
-              Phase 3
-            </span>
-            <strong>Product shell</strong>
-          </div>
-          <p style={{ margin: 0, color: "var(--muted-foreground)" }}>
-            Layout, metadata framing, and route chrome live here. Feature logic
-            stays outside the shell.
-          </p>
-        </div>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Phase 3</Badge>
+            <CardTitle>Product shell</CardTitle>
+            <CardDescription>
+              Layout, metadata framing, and route chrome live here. Feature
+              logic stays outside the shell.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button variant="outline" size="sm">
+              Shell ready
+            </Button>
+          </CardContent>
+        </Card>
       </aside>
 
       <main style={{ display: "grid", minWidth: 0 }}>
@@ -164,14 +135,24 @@ export function ProductShell({ children }: { children: ReactNode }) {
           </div>
 
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <ShellCard
-              title="Theme"
-              value="cal-neutral"
-              detail="Default preset"
-            />
-            <ShellCard title="Mode" value="Light" detail="Runtime fallback" />
+            <Card>
+              <CardHeader>
+                <Badge variant="secondary">Theme</Badge>
+                <CardTitle>cal-neutral</CardTitle>
+                <CardDescription>Default preset</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Badge variant="secondary">Mode</Badge>
+                <CardTitle>Light</CardTitle>
+                <CardDescription>Runtime fallback</CardDescription>
+              </CardHeader>
+            </Card>
           </div>
         </header>
+
+        <Separator />
 
         <div style={{ padding: 28, display: "grid", gap: 24 }}>{children}</div>
       </main>

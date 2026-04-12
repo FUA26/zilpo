@@ -1,3 +1,13 @@
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@pisky/ui";
+
 export default function DashboardPage() {
   return (
     <section style={{ display: "grid", gap: 24 }}>
@@ -27,70 +37,46 @@ export default function DashboardPage() {
           gap: 16,
         }}
       >
-        <article
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 18,
-          }}
-        >
-          <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-            Sessions
-          </span>
-          <strong style={{ display: "block", fontSize: 28 }}>128</strong>
-        </article>
-        <article
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 18,
-          }}
-        >
-          <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-            Uptime
-          </span>
-          <strong style={{ display: "block", fontSize: 28 }}>99.9%</strong>
-        </article>
-        <article
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 18,
-          }}
-        >
-          <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-            Status
-          </span>
-          <strong style={{ display: "block", fontSize: 28 }}>Ready</strong>
-        </article>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Sessions</Badge>
+            <CardTitle>128</CardTitle>
+            <CardDescription>Active sessions in the last 24h.</CardDescription>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Uptime</Badge>
+            <CardTitle>99.9%</CardTitle>
+            <CardDescription>Stable runtime signal.</CardDescription>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Status</Badge>
+            <CardTitle>Ready</CardTitle>
+            <CardDescription>
+              Foundation is set for feature work.
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </div>
 
-      <article
-        style={{
-          border: "1px solid var(--border)",
-          borderRadius: "var(--radius-xl)",
-          background: "var(--card)",
-          padding: 24,
-          display: "grid",
-          gap: 12,
-        }}
-      >
-        <strong>Phase 3 shell contract</strong>
-        <p
-          style={{
-            margin: 0,
-            color: "var(--muted-foreground)",
-            lineHeight: 1.6,
-          }}
-        >
-          Keep the shell responsible for layout, navigation, and frame-level
-          experience only. Feature state, data fetching, and mutations belong
-          outside this file.
-        </p>
-      </article>
+      <Card>
+        <CardHeader>
+          <CardTitle>Phase 3 shell contract</CardTitle>
+          <CardDescription>
+            Keep the shell responsible for layout, navigation, and frame-level
+            experience only. Feature state, data fetching, and mutations belong
+            outside this file.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button variant="secondary" size="sm">
+            Read more
+          </Button>
+        </CardContent>
+      </Card>
     </section>
   );
 }

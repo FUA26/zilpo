@@ -1,3 +1,14 @@
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Separator,
+} from "@pisky/ui";
+
 export default function HomePage() {
   return (
     <section
@@ -35,55 +46,53 @@ export default function HomePage() {
           gap: 16,
         }}
       >
-        <article
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 18,
-            display: "grid",
-            gap: 8,
-          }}
-        >
-          <strong>Theme first</strong>
-          <p style={{ margin: 0, color: "var(--muted-foreground)" }}>
-            Color, spacing, radius, and type can be switched without touching
-            the component tree.
-          </p>
-        </article>
-        <article
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 18,
-            display: "grid",
-            gap: 8,
-          }}
-        >
-          <strong>Server first</strong>
-          <p style={{ margin: 0, color: "var(--muted-foreground)" }}>
-            The shell is a server layout unless a client boundary is actually
-            needed.
-          </p>
-        </article>
-        <article
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--card)",
-            padding: 18,
-            display: "grid",
-            gap: 8,
-          }}
-        >
-          <strong>Reuse ready</strong>
-          <p style={{ margin: 0, color: "var(--muted-foreground)" }}>
-            `web` and `admin` start separate, then promote shared pieces only
-            when the reuse is real.
-          </p>
-        </article>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Theme first</Badge>
+            <CardTitle>Theme first</CardTitle>
+            <CardDescription>
+              Color, spacing, radius, and type can be switched without touching
+              the component tree.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Server first</Badge>
+            <CardTitle>Server first</CardTitle>
+            <CardDescription>
+              The shell is a server layout unless a client boundary is actually
+              needed.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader>
+            <Badge variant="secondary">Reuse ready</Badge>
+            <CardTitle>Reuse ready</CardTitle>
+            <CardDescription>
+              `web` and `admin` start separate, then promote shared pieces only
+              when the reuse is real.
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </div>
+
+      <Separator />
+
+      <Card>
+        <CardHeader>
+          <Badge variant="secondary">Shared UI</Badge>
+          <CardTitle>Shadcn-style primitives in `packages/ui`</CardTitle>
+          <CardDescription>
+            Phase 4 promotes reusable primitives into the shared package so the
+            two apps can keep a consistent base.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button>Primary action</Button>
+        </CardContent>
+      </Card>
     </section>
   );
 }
