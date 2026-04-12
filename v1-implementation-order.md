@@ -13,4 +13,4 @@ Recommended order for the first production-ready version.
 - Phase 7: feature boundaries and route-to-feature composition
 - Phase 8: DX baseline
 - Phase 9: production hardening (standalone build, security headers, Docker runtime)
-- Phase 10: reuse readiness
+- Phase 10: reuse readiness and template verification

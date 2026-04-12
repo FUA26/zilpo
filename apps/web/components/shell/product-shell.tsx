@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { getBrandProfile } from "@pisky/config/brand";
 import {
   Badge,
   Button,
@@ -16,6 +17,8 @@ type NavItem = {
   label: string;
   description: string;
 };
+
+const brand = getBrandProfile();
 
 const navItems: NavItem[] = [
   {
@@ -79,7 +82,7 @@ export function ProductShell({ children }: { children: ReactNode }) {
       >
         <div style={{ display: "grid", gap: 8 }}>
           <span style={{ color: "var(--muted-foreground)", fontSize: 12 }}>
-            Pisky
+            {brand.productName}
           </span>
           <strong style={{ fontSize: 20, letterSpacing: "-0.04em" }}>
             Reusable SaaS shell

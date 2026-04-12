@@ -9,15 +9,19 @@ import {
   Separator,
 } from "@pisky/ui";
 
+import { createExampleSeed } from "@pisky/db/seed";
+
+const seed = createExampleSeed();
+
 export function AdminHomePageFeature() {
   return (
     <section style={{ display: "grid", gap: 20, maxWidth: 920 }}>
       <div style={{ display: "grid", gap: 12 }}>
         <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-          Admin overview
+          {seed.admin.overviewLabel}
         </span>
         <h1 style={{ margin: 0, fontSize: 44, letterSpacing: "-0.06em" }}>
-          Operational companion surface for Pisky.
+          {seed.admin.headline}
         </h1>
         <p
           style={{
@@ -28,8 +32,7 @@ export function AdminHomePageFeature() {
             maxWidth: 720,
           }}
         >
-          The admin app shares the same primitives and theme, but keeps its own
-          route tree and operational language.
+          {seed.admin.description}
         </p>
       </div>
 
@@ -42,23 +45,29 @@ export function AdminHomePageFeature() {
       >
         <Card>
           <CardHeader>
-            <Badge variant="secondary">Users</Badge>
-            <CardTitle>42</CardTitle>
-            <CardDescription>Visible in the last sync.</CardDescription>
+            <Badge variant="secondary">{seed.admin.cards.users.badge}</Badge>
+            <CardTitle>{seed.admin.cards.users.title}</CardTitle>
+            <CardDescription>
+              {seed.admin.cards.users.description}
+            </CardDescription>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader>
-            <Badge variant="secondary">Checks</Badge>
-            <CardTitle>Green</CardTitle>
-            <CardDescription>Shared gate surface is ready.</CardDescription>
+            <Badge variant="secondary">{seed.admin.cards.checks.badge}</Badge>
+            <CardTitle>{seed.admin.cards.checks.title}</CardTitle>
+            <CardDescription>
+              {seed.admin.cards.checks.description}
+            </CardDescription>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader>
-            <Badge variant="secondary">Mode</Badge>
-            <CardTitle>Ops</CardTitle>
-            <CardDescription>Admin-only workflows live here.</CardDescription>
+            <Badge variant="secondary">{seed.admin.cards.mode.badge}</Badge>
+            <CardTitle>{seed.admin.cards.mode.title}</CardTitle>
+            <CardDescription>
+              {seed.admin.cards.mode.description}
+            </CardDescription>
           </CardHeader>
         </Card>
       </div>
@@ -68,10 +77,7 @@ export function AdminHomePageFeature() {
       <Card>
         <CardHeader>
           <CardTitle>Admin shell contract</CardTitle>
-          <CardDescription>
-            Keep admin lean, operational, and separate from product-facing
-            feature composition.
-          </CardDescription>
+          <CardDescription>{seed.admin.contract}</CardDescription>
         </CardHeader>
         <CardContent>
           <Button variant="secondary" size="sm">

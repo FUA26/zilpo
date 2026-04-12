@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { getBrandProfile } from "@pisky/config/brand";
+
+const brand = getBrandProfile();
 
 export default function RoutesLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,7 +13,7 @@ export default function RoutesLayout({ children }: { children: ReactNode }) {
           padding: "20px 24px",
         }}
       >
-        <strong>Pisky Admin</strong>
+        <strong>{brand.adminName}</strong>
         <nav style={{ marginTop: 8, display: "flex", gap: 16 }}>
           <Link href="/">Home</Link>
           <Link href="/dashboard">Dashboard</Link>

@@ -13,4 +13,4 @@ Start-to-finish path for building the starter from zero.
 7. feature boundaries and route-to-feature composition
 8. DX baseline
 9. production hardening (standalone build, security headers, Docker runtime)
-10. reuse readiness
+10. reuse readiness and template verification

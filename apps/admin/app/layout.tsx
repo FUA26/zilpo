@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { getBrandProfile } from "@pisky/config/brand";
 import { calNeutralTheme, themeToStyle } from "@pisky/ui/theme";
 import "./globals.css";
 
+const brand = getBrandProfile();
+
 export const metadata: Metadata = {
   title: {
-    default: "Pisky Admin",
-    template: "%s | Pisky Admin",
+    default: brand.adminName,
+    template: `%s | ${brand.adminName}`,
   },
-  description: "Pisky admin surface.",
+  description: brand.adminTagline,
 };
 
 export default function RootLayout({

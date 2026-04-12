@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { getBrandProfile } from "@pisky/config/brand";
 import { calNeutralTheme, themeToStyle } from "@pisky/ui/theme";
 import "./globals.css";
 
+const brand = getBrandProfile();
+
 export const metadata: Metadata = {
   title: {
-    default: "Pisky",
-    template: "%s | Pisky",
+    default: brand.productName,
+    template: `%s | ${brand.productName}`,
   },
-  description: "Pisky is an opinionated Next.js SaaS starter.",
+  description: brand.productTagline,
 };
 
 export default function RootLayout({

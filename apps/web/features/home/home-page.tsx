@@ -1,3 +1,4 @@
+import { getBrandProfile } from "@pisky/config/brand";
 import {
   Badge,
   Button,
@@ -9,15 +10,20 @@ import {
   Separator,
 } from "@pisky/ui";
 
+import { createExampleSeed } from "@pisky/db/seed";
+
+const brand = getBrandProfile();
+const seed = createExampleSeed();
+
 export function HomePageFeature() {
   return (
     <section style={{ display: "grid", gap: 20, maxWidth: 920 }}>
       <div style={{ display: "grid", gap: 12 }}>
         <span style={{ color: "var(--muted-foreground)", fontSize: 13 }}>
-          Starter overview
+          {seed.product.overviewLabel}
         </span>
         <h1 style={{ margin: 0, fontSize: 48, letterSpacing: "-0.06em" }}>
-          Pisky gives every new app the same product spine.
+          {brand.productName} gives every new app the same product spine.
         </h1>
         <p
           style={{
@@ -42,31 +48,28 @@ export function HomePageFeature() {
       >
         <Card>
           <CardHeader>
-            <Badge variant="secondary">Theme first</Badge>
-            <CardTitle>Theme first</CardTitle>
+            <Badge variant="secondary">{seed.product.cards.theme.badge}</Badge>
+            <CardTitle>{seed.product.cards.theme.title}</CardTitle>
             <CardDescription>
-              Color, spacing, radius, and type can be switched without touching
-              the component tree.
+              {seed.product.cards.theme.description}
             </CardDescription>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader>
-            <Badge variant="secondary">Server first</Badge>
-            <CardTitle>Server first</CardTitle>
+            <Badge variant="secondary">{seed.product.cards.server.badge}</Badge>
+            <CardTitle>{seed.product.cards.server.title}</CardTitle>
             <CardDescription>
-              The shell is a server layout unless a client boundary is actually
-              needed.
+              {seed.product.cards.server.description}
             </CardDescription>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader>
-            <Badge variant="secondary">Reuse ready</Badge>
-            <CardTitle>Reuse ready</CardTitle>
+            <Badge variant="secondary">{seed.product.cards.reuse.badge}</Badge>
+            <CardTitle>{seed.product.cards.reuse.title}</CardTitle>
             <CardDescription>
-              `web` and `admin` start separate, then promote shared pieces only
-              when the reuse is real.
+              {seed.product.cards.reuse.description}
             </CardDescription>
           </CardHeader>
         </Card>
@@ -77,11 +80,8 @@ export function HomePageFeature() {
       <Card>
         <CardHeader>
           <Badge variant="secondary">Shared UI</Badge>
-          <CardTitle>Shadcn-style primitives in `packages/ui`</CardTitle>
-          <CardDescription>
-            Phase 4 promotes reusable primitives into the shared package so the
-            two apps can keep a consistent base.
-          </CardDescription>
+          <CardTitle>{seed.product.shared.title}</CardTitle>
+          <CardDescription>{seed.product.shared.description}</CardDescription>
         </CardHeader>
         <CardContent>
           <Button>Primary action</Button>

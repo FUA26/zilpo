@@ -20,6 +20,7 @@ Opinionated Next.js SaaS starter.
 - `feature-boundaries.md`
 - `dx-baseline.md`
 - `production-hardening.md`
+- `reuse-readiness.md`
 
 ## Status
 
