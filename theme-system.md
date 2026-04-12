@@ -18,8 +18,8 @@ Phase 2 defines the runtime theme contract for Pisky.
 
 ## Current Presets
 
-- `cal-neutral` is the default light theme.
-- `cal-ink` is the high-contrast dark variant.
+- `mintlify` is the default light theme.
+- `mintlify-dark` is the high-contrast dark variant.
 
 ## Runtime Rule
 

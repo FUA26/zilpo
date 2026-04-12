@@ -21,6 +21,7 @@ type NavItem = {
 
 const brand = getBrandProfile();
 const theme = getThemePreset(process.env.NEXT_PUBLIC_THEME_PRESET);
+const themeModeLabel = theme.mode === "dark" ? "Dark" : "Light";
 
 const navItems: NavItem[] = [
   {
@@ -68,7 +69,7 @@ export function ProductShell({ children }: { children: ReactNode }) {
         display: "grid",
         gridTemplateColumns: "280px minmax(0, 1fr)",
         background:
-          "radial-gradient(circle at top left, rgba(17, 17, 17, 0.03), transparent 35%), var(--background)",
+          "radial-gradient(circle at top left, rgba(24, 226, 153, 0.10), transparent 32%), var(--background)",
       }}
     >
       <aside
@@ -90,7 +91,7 @@ export function ProductShell({ children }: { children: ReactNode }) {
             Reusable SaaS shell
           </strong>
           <p style={{ margin: 0, color: "var(--muted-foreground)" }}>
-            Cal.com-inspired foundation for product and admin surfaces.
+            Mintlify-inspired foundation for product and admin surfaces.
           </p>
         </div>
 
@@ -150,8 +151,8 @@ export function ProductShell({ children }: { children: ReactNode }) {
             <Card>
               <CardHeader>
                 <Badge variant="secondary">Mode</Badge>
-                <CardTitle>Light</CardTitle>
-                <CardDescription>Runtime fallback</CardDescription>
+                <CardTitle>{themeModeLabel}</CardTitle>
+                <CardDescription>Runtime preset mode</CardDescription>
               </CardHeader>
             </Card>
           </div>

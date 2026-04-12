@@ -5,7 +5,7 @@ type ThemeStyle = CSSProperties & Record<`--${string}`, string>;
 
 export function themeToStyle(preset: ThemePreset): ThemeStyle {
   return {
-    colorScheme: preset.name === "cal-ink" ? "dark" : "light",
+    colorScheme: preset.mode,
     "--background": preset.colors.background,
     "--foreground": preset.colors.foreground,
     "--card": preset.colors.card,

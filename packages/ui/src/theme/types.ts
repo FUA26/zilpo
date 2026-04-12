@@ -50,6 +50,7 @@ export type ThemeTypography = {
 export type ThemePreset = {
   name: string;
   description: string;
+  mode: "light" | "dark";
   colors: ThemeColorScale;
   spacing: ThemeSpacingScale;
   radius: ThemeRadiusScale;

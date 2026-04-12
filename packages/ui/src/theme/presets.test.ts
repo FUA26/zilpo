@@ -1,17 +1,22 @@
 import { describe, expect, it } from "vitest";
 
-import { calInkTheme, calNeutralTheme, getThemePreset } from "./presets";
+import { mintlifyDarkTheme, mintlifyTheme, getThemePreset } from "./presets";
 
 describe("getThemePreset", () => {
-  it("defaults to the neutral theme", () => {
-    expect(getThemePreset(undefined)).toBe(calNeutralTheme);
+  it("defaults to the mintlify theme", () => {
+    expect(getThemePreset(undefined)).toBe(mintlifyTheme);
   });
 
-  it("returns the ink theme when requested", () => {
-    expect(getThemePreset("cal-ink")).toBe(calInkTheme);
+  it("returns the mintlify dark theme when requested", () => {
+    expect(getThemePreset("mintlify-dark")).toBe(mintlifyDarkTheme);
   });
 
-  it("falls back to neutral for unknown names", () => {
-    expect(getThemePreset("unknown")).toBe(calNeutralTheme);
+  it("supports the legacy cal aliases", () => {
+    expect(getThemePreset("cal-neutral")).toBe(mintlifyTheme);
+    expect(getThemePreset("cal-ink")).toBe(mintlifyDarkTheme);
+  });
+
+  it("falls back to mintlify for unknown names", () => {
+    expect(getThemePreset("unknown")).toBe(mintlifyTheme);
   });
 });

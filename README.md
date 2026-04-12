@@ -8,7 +8,7 @@ Opinionated Next.js SaaS starter.
 - `apps/admin` for the operational app
 - monorepo from day one
 - shared UI, config, DB, and auth packages
-- Cal.com-inspired visual language by default
+- Mintlify-inspired visual language by default
 
 ## Read First
 

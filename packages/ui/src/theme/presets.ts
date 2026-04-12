@@ -1,95 +1,105 @@
 import type { ThemePreset } from "./types";
 
-export const calNeutralTheme: ThemePreset = {
-  name: "cal-neutral",
-  description: "Cal.com-inspired neutral light theme.",
+const mintlifySpacing = {
+  1: "4px",
+  2: "8px",
+  3: "12px",
+  4: "16px",
+  6: "24px",
+  8: "32px",
+  12: "48px",
+  16: "64px",
+  24: "96px",
+} as const;
+
+const mintlifyRadius = {
+  sm: "6px",
+  md: "10px",
+  lg: "14px",
+  xl: "20px",
+  full: "9999px",
+} as const;
+
+const mintlifyTypography = {
+  sans: "Inter, ui-sans-serif, system-ui, sans-serif",
+  mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace',
+  heading: "Inter, ui-sans-serif, system-ui, sans-serif",
+  baseSize: "16px",
+} as const;
+
+export const mintlifyTheme: ThemePreset = {
+  name: "mintlify",
+  description: "Mintlify-inspired reading-first documentation surface.",
+  mode: "light",
   colors: {
     background: "#ffffff",
-    foreground: "#111111",
+    foreground: "#0d0d0d",
     card: "#ffffff",
-    cardForeground: "#111111",
+    cardForeground: "#0d0d0d",
     popover: "#ffffff",
-    popoverForeground: "#111111",
-    primary: "#111111",
-    primaryForeground: "#ffffff",
+    popoverForeground: "#0d0d0d",
+    primary: "#18e299",
+    primaryForeground: "#0d0d0d",
     secondary: "#f5f5f5",
-    secondaryForeground: "#111111",
-    muted: "#f5f5f5",
-    mutedForeground: "#666666",
-    accent: "#111111",
-    accentForeground: "#ffffff",
-    destructive: "#dc2626",
+    secondaryForeground: "#0d0d0d",
+    muted: "#fafafa",
+    mutedForeground: "#6b7280",
+    accent: "#d4fae8",
+    accentForeground: "#0d0d0d",
+    destructive: "#d45656",
     destructiveForeground: "#ffffff",
-    border: "#e5e5e5",
-    input: "#e5e5e5",
-    ring: "#111111",
+    border: "#e5e7eb",
+    input: "#e5e7eb",
+    ring: "#18e299",
   },
-  spacing: {
-    1: "4px",
-    2: "8px",
-    3: "12px",
-    4: "16px",
-    6: "24px",
-    8: "32px",
-    12: "48px",
-    16: "64px",
-    24: "96px",
-  },
-  radius: {
-    sm: "8px",
-    md: "12px",
-    lg: "16px",
-    xl: "24px",
-    full: "9999px",
-  },
-  typography: {
-    sans: "Inter, ui-sans-serif, system-ui, sans-serif",
-    mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace',
-    heading: "Inter, ui-sans-serif, system-ui, sans-serif",
-    baseSize: "16px",
-  },
+  spacing: mintlifySpacing,
+  radius: mintlifyRadius,
+  typography: mintlifyTypography,
 };
 
-export const calInkTheme: ThemePreset = {
-  name: "cal-ink",
-  description: "High-contrast dark variant for focused work surfaces.",
+export const mintlifyDarkTheme: ThemePreset = {
+  name: "mintlify-dark",
+  description: "Mintlify-inspired dark reading surface.",
+  mode: "dark",
   colors: {
-    background: "#0b0b0b",
-    foreground: "#f5f5f5",
+    background: "#0d0d0d",
+    foreground: "#ffffff",
     card: "#111111",
-    cardForeground: "#f5f5f5",
+    cardForeground: "#ffffff",
     popover: "#111111",
-    popoverForeground: "#f5f5f5",
-    primary: "#f5f5f5",
-    primaryForeground: "#0b0b0b",
+    popoverForeground: "#ffffff",
+    primary: "#18e299",
+    primaryForeground: "#0d0d0d",
     secondary: "#1a1a1a",
-    secondaryForeground: "#f5f5f5",
-    muted: "#1a1a1a",
+    secondaryForeground: "#ffffff",
+    muted: "#181818",
     mutedForeground: "#a3a3a3",
-    accent: "#f5f5f5",
-    accentForeground: "#0b0b0b",
-    destructive: "#ef4444",
-    destructiveForeground: "#ffffff",
-    border: "#2a2a2a",
-    input: "#2a2a2a",
-    ring: "#f5f5f5",
+    accent: "#0c8c5e",
+    accentForeground: "#ffffff",
+    destructive: "#f87171",
+    destructiveForeground: "#0d0d0d",
+    border: "#262626",
+    input: "#262626",
+    ring: "#18e299",
   },
-  spacing: calNeutralTheme.spacing,
-  radius: calNeutralTheme.radius,
-  typography: calNeutralTheme.typography,
+  spacing: mintlifySpacing,
+  radius: mintlifyRadius,
+  typography: mintlifyTypography,
 };
 
 export const themePresets = {
-  "cal-neutral": calNeutralTheme,
-  "cal-ink": calInkTheme,
+  mintlify: mintlifyTheme,
+  "mintlify-dark": mintlifyDarkTheme,
+  "cal-neutral": mintlifyTheme,
+  "cal-ink": mintlifyDarkTheme,
 } as const;
 
 export type ThemePresetName = keyof typeof themePresets;
 
 export function getThemePreset(name: string | undefined): ThemePreset {
   if (!name) {
-    return calNeutralTheme;
+    return mintlifyTheme;
   }
 
-  return themePresets[name as ThemePresetName] ?? calNeutralTheme;
+  return themePresets[name as ThemePresetName] ?? mintlifyTheme;
 }
