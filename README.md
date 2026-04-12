@@ -19,6 +19,7 @@ Opinionated Next.js SaaS starter.
 - `initial-implementation-runthrough.md`
 - `feature-boundaries.md`
 - `dx-baseline.md`
+- `production-hardening.md`
 
 ## Status
 
