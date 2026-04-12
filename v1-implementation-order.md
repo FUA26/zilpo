@@ -6,7 +6,7 @@ Recommended order for the first production-ready version.
 
 - Phase 1: repo foundation
 - Phase 2: visual system and runtime theme mapping
-- Phase 3: web shell
+- Phase 3: web shell and product surface
 - Phase 4: shared UI
 - Phase 5: core app foundation
 - Phase 6: admin app

@@ -6,7 +6,7 @@ Start-to-finish path for building the starter from zero.
 
 1. repo foundation
 2. visual system and runtime theme mapping
-3. `apps/web` shell
+3. `apps/web` shell and product surface
 4. shared UI
 5. core app foundation
 6. `apps/admin`
