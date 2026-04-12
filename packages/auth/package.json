@@ -2,7 +2,18 @@
   "name": "@pisky/auth",
   "private": true,
   "version": "0.0.0",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./config": "./src/config.ts",
+    "./health": "./src/health.ts",
+    "./providers": "./src/providers.ts",
+    "./session": "./src/session.ts"
+  },
+  "dependencies": {
+    "@pisky/config": "workspace:*",
+    "next-auth": "^4.24.13"
   }
 }

@@ -2,7 +2,17 @@
   "name": "@pisky/db",
   "private": true,
   "version": "0.0.0",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./health": "./src/health.ts"
+  },
+  "dependencies": {
+    "@pisky/config": "workspace:*",
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.9"
   }
 }

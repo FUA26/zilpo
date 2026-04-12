@@ -9,6 +9,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@pisky/config": "workspace:*",
+    "@pisky/db": "workspace:*",
+    "@pisky/auth": "workspace:*",
     "@pisky/ui": "workspace:*",
     "eslint-config-next": "^16.2.3",
     "next": "^16.2.3",
