@@ -21,6 +21,8 @@ Opinionated Next.js SaaS starter.
 - `dx-baseline.md`
 - `production-hardening.md`
 - `reuse-readiness.md`
+- `dev-port-map.md`
+- `tooling/docker/postgres/README.md`
 
 ## Status
 
