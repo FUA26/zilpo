@@ -14,6 +14,7 @@ Opinionated Next.js SaaS starter.
 
 - `AGENTS.md`
 - `DESIGN.md`
+- `theme-system.md`
 - `canonical-workflow.md`
 - `initial-implementation-runthrough.md`
 

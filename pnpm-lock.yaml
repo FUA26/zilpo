@@ -28,9 +28,12 @@ importers:
 
   apps/admin:
     dependencies:
+      "@pisky/ui":
+        specifier: workspace:*
+        version: link:../../packages/ui
       eslint-config-next:
         specifier: ^16.2.3
-        version: 16.2.3(eslint@9.39.4)(typescript@6.0.2)
+        version: 16.2.3(@typescript-eslint/parser@8.58.1(eslint@9.39.4)(typescript@6.0.2))(eslint@9.39.4)(typescript@6.0.2)
       next:
         specifier: ^16.2.3
         version: 16.2.3(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -43,9 +46,12 @@ importers:
 
   apps/web:
     dependencies:
+      "@pisky/ui":
+        specifier: workspace:*
+        version: link:../../packages/ui
       eslint-config-next:
         specifier: ^16.2.3
-        version: 16.2.3(@typescript-eslint/parser@8.58.1(eslint@9.39.4)(typescript@6.0.2))(eslint@9.39.4)(typescript@6.0.2)
+        version: 16.2.3(eslint@9.39.4)(typescript@6.0.2)
       next:
         specifier: ^16.2.3
         version: 16.2.3(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -3865,7 +3871,7 @@ snapshots:
       tinyglobby: 0.2.16
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.1(eslint@9.39.4)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4)
     transitivePeerDependencies:
       - supports-color
 

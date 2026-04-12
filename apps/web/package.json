@@ -9,6 +9,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@pisky/ui": "workspace:*",
     "eslint-config-next": "^16.2.3",
     "next": "^16.2.3",
     "react": "^19.2.5",

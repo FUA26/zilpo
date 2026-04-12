@@ -1,0 +1,47 @@
+import type { CSSProperties } from "react";
+import type { ThemePreset } from "./types";
+
+type ThemeStyle = CSSProperties & Record<`--${string}`, string>;
+
+export function themeToStyle(preset: ThemePreset): ThemeStyle {
+  return {
+    colorScheme: preset.name === "cal-ink" ? "dark" : "light",
+    "--background": preset.colors.background,
+    "--foreground": preset.colors.foreground,
+    "--card": preset.colors.card,
+    "--card-foreground": preset.colors.cardForeground,
+    "--popover": preset.colors.popover,
+    "--popover-foreground": preset.colors.popoverForeground,
+    "--primary": preset.colors.primary,
+    "--primary-foreground": preset.colors.primaryForeground,
+    "--secondary": preset.colors.secondary,
+    "--secondary-foreground": preset.colors.secondaryForeground,
+    "--muted": preset.colors.muted,
+    "--muted-foreground": preset.colors.mutedForeground,
+    "--accent": preset.colors.accent,
+    "--accent-foreground": preset.colors.accentForeground,
+    "--destructive": preset.colors.destructive,
+    "--destructive-foreground": preset.colors.destructiveForeground,
+    "--border": preset.colors.border,
+    "--input": preset.colors.input,
+    "--ring": preset.colors.ring,
+    "--radius-sm": preset.radius.sm,
+    "--radius-md": preset.radius.md,
+    "--radius-lg": preset.radius.lg,
+    "--radius-xl": preset.radius.xl,
+    "--radius": preset.radius.md,
+    "--space-1": preset.spacing[1],
+    "--space-2": preset.spacing[2],
+    "--space-3": preset.spacing[3],
+    "--space-4": preset.spacing[4],
+    "--space-6": preset.spacing[6],
+    "--space-8": preset.spacing[8],
+    "--space-12": preset.spacing[12],
+    "--space-16": preset.spacing[16],
+    "--space-24": preset.spacing[24],
+    "--font-sans": preset.typography.sans,
+    "--font-mono": preset.typography.mono,
+    "--font-heading": preset.typography.heading,
+    "--font-size-base": preset.typography.baseSize,
+  };
+}
