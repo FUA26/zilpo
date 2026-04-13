@@ -37,6 +37,15 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-heading: Inter, ui-sans-serif, system-ui, sans-serif;
   --font-size-base: 16px;
+
+  /* Linear Clone specific variables */
+  --background-muted: #fafafa;
+  --foreground-muted: #666666;
+  --foreground-subtle: #999999;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-hover: #f5f5f5;
+  --border-subtle: #eaeaea;
 }
 
 * {
