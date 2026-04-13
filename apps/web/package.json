@@ -9,11 +9,12 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@pisky/auth": "workspace:*",
     "@pisky/config": "workspace:*",
     "@pisky/db": "workspace:*",
-    "@pisky/auth": "workspace:*",
     "@pisky/ui": "workspace:*",
     "eslint-config-next": "^16.2.3",
+    "framer-motion": "^12.38.0",
     "next": "^16.2.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
