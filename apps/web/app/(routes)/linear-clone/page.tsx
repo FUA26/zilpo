@@ -9,6 +9,18 @@ import {
   Footer,
 } from "../../../features/linear-clone";
 
+export const metadata = {
+  title: "Linear - The Tool That Ships Products",
+  description:
+    "Linear is a purpose-built tool for planning, building, and shipping products. Issue tracking, project management, and workflow automation in one seamless platform.",
+  openGraph: {
+    title: "Linear - The Tool That Ships Products",
+    description:
+      "Linear is a purpose-built tool for planning, building, and shipping products.",
+    type: "website",
+  },
+};
+
 export default function LinearClonePage() {
   return (
     <>
