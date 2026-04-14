@@ -33,11 +33,13 @@ export type ThemeSpacingScale = {
 };
 
 export type ThemeRadiusScale = {
+  micro: string;
   sm: string;
   md: string;
   lg: string;
   xl: string;
   full: string;
+  circle: string;
 };
 
 export type ThemeTypography = {
@@ -45,6 +47,7 @@ export type ThemeTypography = {
   mono: string;
   heading: string;
   baseSize: string;
+  fontFeatureSettings: string;
 };
 
 export type ThemePreset = {

@@ -25,10 +25,13 @@ export function themeToStyle(preset: ThemePreset): ThemeStyle {
     "--border": preset.colors.border,
     "--input": preset.colors.input,
     "--ring": preset.colors.ring,
+    "--radius-micro": preset.radius.micro,
     "--radius-sm": preset.radius.sm,
     "--radius-md": preset.radius.md,
     "--radius-lg": preset.radius.lg,
     "--radius-xl": preset.radius.xl,
+    "--radius-full": preset.radius.full,
+    "--radius-circle": preset.radius.circle,
     "--radius": preset.radius.md,
     "--space-1": preset.spacing[1],
     "--space-2": preset.spacing[2],
@@ -43,5 +46,6 @@ export function themeToStyle(preset: ThemePreset): ThemeStyle {
     "--font-mono": preset.typography.mono,
     "--font-heading": preset.typography.heading,
     "--font-size-base": preset.typography.baseSize,
+    "--font-feature-settings": preset.typography.fontFeatureSettings,
   };
 }

@@ -11,10 +11,11 @@ export function Card({
     <article
       className={cn(className)}
       style={{
-        border: "1px solid var(--border)",
-        borderRadius: "var(--radius-xl)",
-        background: "var(--card)",
+        border: "1px solid rgba(255, 255, 255, 0.08)",
+        borderRadius: "8px",
+        background: "rgba(255, 255, 255, 0.02)",
         color: "var(--card-foreground)",
+        boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
         ...style,
       }}
       {...props}
@@ -50,7 +51,15 @@ export function CardTitle({
   return (
     <h3
       className={cn(className)}
-      style={{ margin: 0, fontSize: 18, letterSpacing: "-0.03em", ...style }}
+      style={{
+        margin: 0,
+        fontSize: 20,
+        fontWeight: 590,
+        letterSpacing: "-0.24px",
+        lineHeight: 1.33,
+        color: "#f7f8f8",
+        ...style,
+      }}
       {...props}
     >
       {children}
@@ -67,7 +76,14 @@ export function CardDescription({
   return (
     <p
       className={cn(className)}
-      style={{ margin: 0, color: "var(--muted-foreground)", ...style }}
+      style={{
+        margin: 0,
+        color: "#8a8f98",
+        fontSize: 15,
+        letterSpacing: "-0.165px",
+        lineHeight: 1.6,
+        ...style,
+      }}
       {...props}
     >
       {children}

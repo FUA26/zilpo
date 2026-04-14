@@ -1,7 +1,13 @@
 import type { CSSProperties, HTMLAttributes } from "react";
 import { cn } from "../../lib/utils";
 
-type BadgeVariant = "default" | "secondary" | "outline";
+type BadgeVariant =
+  | "default"
+  | "secondary"
+  | "outline"
+  | "success"
+  | "neutral"
+  | "subtle";
 
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
   variant?: BadgeVariant;
@@ -23,6 +29,21 @@ const badgeStyles: Record<BadgeVariant, CSSProperties> = {
     borderColor: "var(--border)",
     color: "var(--foreground)",
   },
+  success: {
+    background: "#10b981",
+    borderColor: "#10b981",
+    color: "#f7f8f8",
+  },
+  neutral: {
+    background: "transparent",
+    borderColor: "#23252a",
+    color: "#d0d6e0",
+  },
+  subtle: {
+    background: "rgba(255, 255, 255, 0.05)",
+    borderColor: "rgba(255, 255, 255, 0.05)",
+    color: "#f7f8f8",
+  },
 };
 
 export function Badge({
@@ -38,11 +59,11 @@ export function Badge({
       style={{
         alignItems: "center",
         borderStyle: "solid",
-        borderWidth: 1,
+        borderWidth: "1px",
         borderRadius: "var(--radius-full)",
         display: "inline-flex",
         fontSize: 12,
-        fontWeight: 600,
+        fontWeight: 510,
         lineHeight: 1,
         padding: "6px 10px",
         ...badgeStyles[variant],

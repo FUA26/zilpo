@@ -13,11 +13,13 @@ const mintlifySpacing = {
 } as const;
 
 const mintlifyRadius = {
+  micro: "2px",
   sm: "6px",
   md: "10px",
   lg: "14px",
   xl: "20px",
   full: "9999px",
+  circle: "50%",
 } as const;
 
 const mintlifyTypography = {
@@ -25,6 +27,7 @@ const mintlifyTypography = {
   mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace',
   heading: "Inter, ui-sans-serif, system-ui, sans-serif",
   baseSize: "16px",
+  fontFeatureSettings: "normal",
 } as const;
 
 export const mintlifyTheme: ThemePreset = {
@@ -87,11 +90,72 @@ export const mintlifyDarkTheme: ThemePreset = {
   typography: mintlifyTypography,
 };
 
+const linearSpacing = {
+  1: "4px",
+  2: "8px",
+  3: "12px",
+  4: "16px",
+  6: "24px",
+  8: "32px",
+  12: "48px",
+  16: "64px",
+  24: "96px",
+} as const;
+
+const linearRadius = {
+  micro: "2px",
+  sm: "4px",
+  md: "6px",
+  lg: "8px",
+  xl: "12px",
+  full: "9999px",
+  circle: "50%",
+} as const;
+
+const linearTypography = {
+  sans: 'Inter Variable, "Inter Variable", SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+  mono: '"Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace',
+  heading: 'Inter Variable, "Inter Variable", SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+  baseSize: "16px",
+  fontFeatureSettings: '"cv01", "ss03"',
+} as const;
+
+export const linearTheme: ThemePreset = {
+  name: "linear",
+  description: "Linear-inspired dark-mode-first design system.",
+  mode: "dark",
+  colors: {
+    background: "#08090a",
+    foreground: "#f7f8f8",
+    card: "#191a1b",
+    cardForeground: "#f7f8f8",
+    popover: "#191a1b",
+    popoverForeground: "#f7f8f8",
+    primary: "#5e6ad2",
+    primaryForeground: "#ffffff",
+    secondary: "#28282c",
+    secondaryForeground: "#d0d6e0",
+    muted: "#191a1b",
+    mutedForeground: "#8a8f98",
+    accent: "#7170ff",
+    accentForeground: "#ffffff",
+    destructive: "#dc2626",
+    destructiveForeground: "#ffffff",
+    border: "rgba(255,255,255,0.08)",
+    input: "rgba(255,255,255,0.08)",
+    ring: "rgba(255,255,255,0.08)",
+  },
+  spacing: linearSpacing,
+  radius: linearRadius,
+  typography: linearTypography,
+};
+
 export const themePresets = {
   mintlify: mintlifyTheme,
   "mintlify-dark": mintlifyDarkTheme,
   "cal-neutral": mintlifyTheme,
   "cal-ink": mintlifyDarkTheme,
+  linear: linearTheme,
 } as const;
 
 export type ThemePresetName = keyof typeof themePresets;

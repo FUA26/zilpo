@@ -1,29 +1,37 @@
 :root {
-  color-scheme: light;
-  --background: #ffffff;
-  --foreground: #111111;
-  --card: #ffffff;
-  --card-foreground: #111111;
-  --popover: #ffffff;
-  --popover-foreground: #111111;
-  --primary: #111111;
+  color-scheme: dark;
+  /* Linear Design System Colors */
+  --background: #08090a;
+  --foreground: #f7f8f8;
+  --card: #191a1b;
+  --card-foreground: #f7f8f8;
+  --popover: #191a1b;
+  --popover-foreground: #f7f8f8;
+  --primary: #5e6ad2;
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #111111;
-  --muted: #f5f5f5;
-  --muted-foreground: #666666;
-  --accent: #111111;
+  --secondary: #28282c;
+  --secondary-foreground: #d0d6e0;
+  --muted: #191a1b;
+  --muted-foreground: #8a8f98;
+  --accent: #7170ff;
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #111111;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius: 12px;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(255, 255, 255, 0.08);
+
+  /* Linear Border Radius Scale */
+  --radius-micro: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+  --radius-circle: 50%;
+  --radius: 6px;
+
+  /* Spacing Scale */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -33,19 +41,28 @@
   --space-12: 48px;
   --space-16: 64px;
   --space-24: 96px;
-  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-heading: Inter, ui-sans-serif, system-ui, sans-serif;
-  --font-size-base: 16px;
 
-  /* Linear Clone specific variables */
-  --background-muted: #fafafa;
-  --foreground-muted: #666666;
-  --foreground-subtle: #999999;
-  --surface: #ffffff;
-  --surface-elevated: #ffffff;
-  --surface-hover: #f5f5f5;
-  --border-subtle: #eaeaea;
+  /* Linear Typography */
+  --font-sans: 'Inter Variable', "Inter Variable", SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-heading: 'Inter Variable', "Inter Variable", SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-size-base: 16px;
+  --font-feature-settings: "cv01", "ss03";
+
+  /* Linear Design System Extensions */
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-standard: rgba(255, 255, 255, 0.08);
+  --background-panel: #0f1011;
+  --background-surface: #191a1b;
+  --background-secondary: #28282c;
+  --text-primary: #f7f8f8;
+  --text-secondary: #d0d6e0;
+  --text-tertiary: #8a8f98;
+  --text-quaternary: #62666d;
+  --brand-indigo: #5e6ad2;
+  --accent-violet: #7170ff;
+  --accent-hover: #828fff;
+  --success-green: #10b981;
 }
 
 * {
@@ -59,6 +76,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-feature-settings: var(--font-feature-settings);
 }
 
 a {
